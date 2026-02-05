@@ -13,13 +13,11 @@ const AboutMe: React.FC = () => {
           {/* Descripción */}
           <div className="space-y-3">
             <h2 className="text-2xl font-semibold">Sobre mí</h2>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              hola mi nombre es javier olivera soy desarrollador web full stack 
-             con 2 años de experiencia en la creacion de paginas y aplicaciones web cuento con
-             conocimiento y pratica en algunas de las tecnologias mas usadas como <span className=" font-bold">HTML, CSS,
-             JAVASCRIPT, TYPESCRIPT REACT</span> entre otros. Te invito a seguir viendo mi portfolio
-             para conocer el stack completo de tecnologias que manejo y 
-             algunos de los proyectos que he creado 
+            <p className="text-xl text-slate-300 leading-relaxed">
+              Hola, mi nombre es Javier Olivera.
+              Soy desarrollador web full stack con 2 años de experiencia en la creación de páginas y aplicaciones web.
+              Cuento con conocimiento y práctica en algunas de las tecnologías más usadas, como <span className=" font-bold">HTML, CSS, JavaScript, TypeScript, React</span>, entre otras.
+              Te invito a seguir viendo mi portfolio para conocer el stack completo de tecnologías que manejo y algunos de los proyectos que he creado.
             </p>
           </div>
 
