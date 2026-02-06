@@ -131,7 +131,10 @@ const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const openTutorial = (project: Project) => {
-    if (!project.tutorialSteps || project.tutorialSteps.length === 0) return;
+    if (!project.tutorialSteps || project.tutorialSteps.length === 0){
+       alert("Próximamente agregaré el tutorial para este proyecto")
+     return;
+    }
     setSelectedProject(project);
   };
 
@@ -198,13 +201,9 @@ const Projects: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => openTutorial(project)}
-                    className="inline-flex items-center justify-center rounded-md border border-slate-500 px-4 py-2 text-sm font-medium text-slate-100 hover:bg-slate-700 transition-colors disabled:opacity-40"
-                    disabled={
-                      !project.tutorialSteps ||
-                      project.tutorialSteps.length === 0
-                    }
+                    className="inline-flex items-center justify-center rounded-md border border-slate-500 px-4 py-2 text-sm font-medium text-slate-100 hover:bg-slate-700 transition-colors"
                   >
-                    ver tutorial del app
+                    ver tutorial de la app
                   </button>
                 </div>
               </div>

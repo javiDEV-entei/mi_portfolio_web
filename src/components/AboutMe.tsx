@@ -12,7 +12,7 @@ const AboutMe: React.FC = () => {
         <div className="space-y-6">
           {/* Descripción */}
           <div className="space-y-3">
-            <h2 className="text-2xl font-semibold">Sobre mí</h2>
+            <h2 className="text-2xl font-semibold">Una breve introduccion sobre mí</h2>
             <p className="text-xl text-slate-300 leading-relaxed">
               Hola, mi nombre es Javier Olivera.
               Soy desarrollador web full stack con 2 años de experiencia en la creación de páginas y aplicaciones web.

@@ -16,10 +16,10 @@ const Header: React.FC = () => {
         </div>
 
         {/* Menú (derecha) */}
-        <ul className="flex items-center gap-6 text-sm font-medium">
+        <ul className="flex items-center gap-6 text-lg font-medium">
           <li>
             <a href="#sobre-mi" className="hover:text-sky-400 transition-colors">
-              sobre mi
+              Sobre mi
             </a>
           </li>
           <li>
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
               href="#proyectos"
               className="hover:text-sky-400 transition-colors"
             >
-              proyectos
+              Proyectos
             </a>
           </li>
           <li>
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
               href="#tecnologias"
               className="hover:text-sky-400 transition-colors"
             >
-              tecnologías
+              Tecnologías
             </a>
           </li>
           <li>
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
               href="#contacto"
               className="hover:text-sky-400 transition-colors"
             >
-              contacto
+              Contacto
             </a>
           </li>
         </ul>
