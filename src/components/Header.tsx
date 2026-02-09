@@ -1,9 +1,10 @@
 // src/components/Header.tsx
 import React from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const Header: React.FC = () => {
   return (
-    <header className="w-full bg-slate-900 text-white">
+    <header className="w-full bg-slate-900 text-white dark:bg-slate-50 dark:text-slate-900">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Logo (izquierda) */}
         <div className="flex items-center">
@@ -46,6 +47,7 @@ const Header: React.FC = () => {
               Contacto
             </a>
           </li>
+            <ThemeToggle/>
         </ul>
       </nav>
     </header>

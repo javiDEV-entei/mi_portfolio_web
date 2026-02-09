@@ -31,7 +31,7 @@ const Technologies: React.FC = () => {
   return (
     <section
       id="tecnologias"
-      className="w-full bg-slate-900 text-white py-12"
+      className="w-full bg-slate-900 text-white py-12 dark:bg-slate-50 dark:text-slate-900"
     >
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="text-2xl font-semibold mb-8">

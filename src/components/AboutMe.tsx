@@ -5,7 +5,7 @@ const AboutMe: React.FC = () => {
   return (
     <section
       id="sobre-mi"
-      className="w-full bg-slate-900 text-white py-12"
+      className="w-full bg-slate-900 text-white py-12 dark:bg-slate-50 dark:text-slate-900"
     >
       <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* IZQUIERDA: descripción + redes */}
@@ -13,7 +13,7 @@ const AboutMe: React.FC = () => {
           {/* Descripción */}
           <div className="space-y-3">
             <h2 className="text-2xl font-semibold">Una breve introduccion sobre mí</h2>
-            <p className="text-xl text-slate-300 leading-relaxed">
+            <p className="text-xl text-slate-300 dark:text-slate-700 leading-relaxed">
               Hola, mi nombre es Javier Olivera.
               Soy desarrollador web full stack con 2 años de experiencia en la creación de páginas y aplicaciones web.
               Cuento con conocimiento y práctica en algunas de las tecnologías más usadas, como <span className=" font-bold">HTML, CSS, JavaScript, TypeScript, React</span>, entre otras.
@@ -23,7 +23,7 @@ const AboutMe: React.FC = () => {
 
           {/* Redes sociales */}
           <div className="space-y-3">
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-900">
               Conecta conmigo
             </h3>
             <div className="flex flex-wrap gap-4">
@@ -35,22 +35,22 @@ const AboutMe: React.FC = () => {
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
               >
                 <img
-                  src="/public/aboutMe/linkedin-logo.png"
+                  src="/public/aboutMe/LinkedIn-logo.svg"
                   alt="LinkedIn"
                   className="h-5 w-5"
                 />
               </a>
 
-              {/* Facebook */}
+              {/*Email*/}
               <a
-                href="https://www.facebook.com/javier.olivera.54/?locale=es_LA"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
               >
                 <img
-                  src="/public/aboutMe/facebook-logo.png"
-                  alt="Facebook"
+                  src="/public/aboutMe/Email-logo.svg"
+                  alt="email"
                   className="h-5 w-5"
                 />
               </a>
@@ -63,7 +63,7 @@ const AboutMe: React.FC = () => {
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
               >
                 <img
-                  src="/public/aboutMe/github-logo.png"
+                  src="/public/aboutMe/Github-Dark-logo.svg"
                   alt="GitHub"
                   className="h-5 w-5"
                 />

@@ -1,3 +1,5 @@
 @import "tailwindcss";
 
 
+/* Variante dark que se activa con data-theme="dark" en html */
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
