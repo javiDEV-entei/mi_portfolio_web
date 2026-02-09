@@ -108,6 +108,54 @@ const projects: Project[] = [
       "TailwindCSS",
       "React-swipeable-list",
     ],
+    tutorialSteps: [
+      {
+        id: 1,
+        text: "PASO 1: Establecer el presupuesto deseado y hacer click en definir presupuesto",
+        image: "public/projects-tutorials/project2/ins1.png",
+      },
+      {
+        id: 2,
+        text: "PASO 2: luego de esto tendras acceso a la seccion principal de la app. Para empezar pueddes agregar un gasto haciendo click en el boton de + situado abajo a la derecha",
+        image: "public/projects-tutorials/project2/ins2.png",
+      },
+      {
+        id: 3,
+        image: "public/projects-tutorials/project2/ins3.png",
+        text: "PASO 3: En el formulario de nuevo gasto puedes definir: un nombre para el gasto, la cantidad gastada, la categoria a la que pertenece el gasto, y la fecha en que se realizo el gasto. Para fines ilustrativos en este tutorial crearemos 3 gastos",
+      },
+      {
+        id: 4,
+        text: "PASO 4: Despues de agregar los gastos podras ver varias caracteristicas: una grafica que aumenta o disminuye a medida que agregues o elimines gastos, una seccion para ver tu presupuesto total, el disponible y el gastado",
+        image: "public/projects-tutorials/project2/ins4.png",
+      },
+      {
+        id: 5,
+        text: "PASO 5: En la seccion de filtrar gastos podras filtrarlos por categoria",
+        image: "public/projects-tutorials/project2/ins5.png",
+      },
+      {
+        id: 6,
+        text: "PASO 6: Haciendo click sobre el gasto y arrastrando hacia la izquierda puedes eliminar el gasto de la lista, si lo haces la cantidad del gasto eliminado sera sumada nuevamente al presupuesto disponible",
+        image: "public/projects-tutorials/project2/ins6.png",
+      },
+      {
+        id: 7,
+        text: "PASO 7: Haciendo click sobre el gasto y arrastrando hacia la derecha puedes actualizar la informacion referente al gasto",
+        image: "public/projects-tutorials/project2/ins7.png",
+      },
+      {
+        id: 8,
+        text: "PASO 8: en el formulario de actualizacion del gasto puedes editar todos los datos del gasto obs si modificas la cantidad de gasto esta cambio tambien se mostrara luego en la grafica ",
+        image: "public/projects-tutorials/project2/ins8.png",
+      },
+      {
+        id: 9,
+        text: "PASO 9: Por ultimo si deseas establecer otro presupuesto para reiniciar tu lista de gastos puedes hacer click en el boton Resetear APP",
+        image: "public/projects-tutorials/project2/ins9.png",
+      },
+      
+    ],
   },
   {
     id: 3,
