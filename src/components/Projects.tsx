@@ -22,7 +22,7 @@ const projects: Project[] = [
     id: 1,
     title: "UpTask - Administrador de proyectos",
     description:
-      "esta aplicación permite al usuario crear proyectos y también asignar tareas dentro de los mismos, darle distintos estados a estas tareas según vayan siendo completadas e incuso adjuntar notas a las esas tareas también implementa un panel de creación de cuentas e inicio de sesión",
+      "Esta aplicación permite al usuario crear proyectos y también asignar tareas dentro de los mismos, darle distintos estados a estas tareas según vayan siendo completadas e incuso adjuntar notas a las esas tareas también implementa un panel de creación de cuentas e inicio de sesión",
     image: "public/projects/img-proyecto-3.png",
     productionUrl:
       "https://javi-dev-entei-uptask-admin-de-proy.vercel.app/",
@@ -171,6 +171,29 @@ const projects: Project[] = [
       "TailwindCSS",
       "Zustand",
       "Consumo de APIs externas",
+    ],
+    tutorialSteps: [
+      {
+        id: 1,
+        text: "PASO 1: en el campo nombre o ingredintes puedes buscar por un tipo de bebida especifica a modo de ejemplo en la imagen se busca una bebida de vodka con limon en el campo categoria puedes seleccionar la que mas se adecue a lo que estas buscando",
+        image: "public/projects-tutorials/project3/ins1.png",
+      },
+      {
+        id: 2,
+        text: "PASO 2:Al hacer click en buscar bebidas veras que aparecen varios resultados con una imagen de la bebida correspondiente y su nombre",
+        image: "public/projects-tutorials/project3/ins2.png",
+      },
+      {
+        id: 3,
+        text: "PASO 3: Haciendo click en ver receta puedes ver los ingredientes de la misma y el modo de prepararla ademas de eso puedes agregar la receta a la seccion de favoritos para verla despues OBS: actualmente la informacion se muestraen ingles por cuestiones del funcionamiento de la app pero proximamente estara traducido",
+        image: "public/projects-tutorials/project3/ins3.png",
+      },
+      {
+        id: 4,
+        text: "PASO 4: Al agregarlo a favoritos podras ver una notificacion arriba a la derecha confirmando que se agrego",
+        image: "public/projects-tutorials/project3/ins4.png",
+      },
+      
     ],
   },
 ];
