@@ -7,6 +7,12 @@ const AboutMe: React.FC = () => {
       id="sobre-mi"
       className="w-full bg-slate-900 text-white py-12 dark:bg-slate-50 dark:text-slate-900"
     >
+      <h1 className="mx-auto max-w-xs text-4xl md:text-5xl font-black uppercase text-white dark:text-slate-900 mb-2">
+      JAVIER OLIVERA
+    </h1>
+    <p className="mx-auto max-w-xs text-lg md:text-xl font-thin text-slate-400 dark:text-slate-600 mb-20">
+      desarrollador FullStack
+    </p>
       <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* IZQUIERDA: descripción + redes */}
         <div className="space-y-6">
@@ -16,7 +22,7 @@ const AboutMe: React.FC = () => {
             <p className="text-xl text-slate-300 dark:text-slate-700 leading-relaxed">
               Hola, mi nombre es Javier Olivera.
               Soy desarrollador web full stack con 2 años de experiencia en la creación de páginas y aplicaciones web.
-              Cuento con conocimiento y práctica en algunas de las tecnologías más usadas, como HTML, CSS, JavaScript, TypeScript, React, entre otras.
+              Cuento con conocimiento y práctica en algunas de las tecnologías más usadas, como <span className=" font-bold">HTML, CSS, JavaScript, TypeScript, React</span>, entre otras.
               Te invito a seguir viendo mi portfolio para conocer el stack completo de tecnologías que manejo y algunos de los proyectos que he creado.
                           </p>
           </div>
@@ -24,7 +30,7 @@ const AboutMe: React.FC = () => {
           {/* Redes sociales */}
           <div className="space-y-3">
             <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-900">
-              Conecta conmigo
+              Contacta conmigo
             </h3>
             <div className="flex flex-wrap gap-4">
               {/* LinkedIn */}
@@ -32,26 +38,24 @@ const AboutMe: React.FC = () => {
                 href="https://www.linkedin.com/in/javier-olivera-0b1066271/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
               >
                 <img
                   src="/public/aboutMe/LinkedIn-logo.svg"
                   alt="LinkedIn"
-                  className="h-5 w-5"
+                  className="h-7 w-7"
                 />
               </a>
 
               {/*Email*/}
               <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
+                href="#contacto"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
               >
                 <img
                   src="/public/aboutMe/Email-logo.svg"
                   alt="email"
-                  className="h-5 w-5"
+                  className="h-7 w-7"
                 />
               </a>
 
@@ -60,12 +64,12 @@ const AboutMe: React.FC = () => {
                 href="https://github.com/javiDEV-entei"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
               >
                 <img
                   src="/public/aboutMe/Github-Dark-logo.svg"
                   alt="GitHub"
-                  className="h-5 w-5"
+                  className="h-7 w-7"
                 />
               </a>
 

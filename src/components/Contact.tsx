@@ -1,3 +1,4 @@
+
 // src/components/Contact.tsx
 import React, { useState } from "react";
 
@@ -26,7 +27,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contacto" className="w-full bg-slate-900 text-white py-12 dark:bg-slate-50 dark:text-slate-900">
+    <section id="contacto" className="w-full bg-slate-900 text-white py-12">
       <div className="mx-auto max-w-3xl px-4">
         <h2 className="text-2xl font-semibold mb-6">Contacto</h2>
 

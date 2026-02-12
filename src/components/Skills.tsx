@@ -34,7 +34,7 @@ const Technologies: React.FC = () => {
       className="w-full bg-slate-900 text-white py-12 dark:bg-slate-50 dark:text-slate-900"
     >
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="text-2xl font-semibold mb-8">
+        <h2 className=" text-center text-2xl font-semibold mb-8">
           Tecnologías con las que he trabajado
         </h2>
 
