@@ -2,6 +2,7 @@
 import React from "react";
 
 const AboutMe: React.FC = () => {
+  
   return (
     <section
       id="sobre-mi"

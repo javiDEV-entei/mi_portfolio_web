@@ -1,5 +1,4 @@
 
-// src/components/Contact.tsx
 import React, { useState } from "react";
 
 const Contact: React.FC = () => {
@@ -15,19 +14,33 @@ const Contact: React.FC = () => {
 
     try {
       setStatus("sending");
-      // Aquí luego llamaremos a EmailJS o a tu API (ver secciones 2 y 3)
-      // await sendContactEmail({ email, subject, message });
+
+      // ← REEMPLAZA EL COMENTARIO POR ESTO:
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json" 
+        },
+        body: JSON.stringify({ email, subject, message }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Error al enviar");
+      }
+
       setStatus("success");
       setEmail("");
       setSubject("");
       setMessage("");
     } catch (err) {
+      console.error(err);
       setStatus("error");
     }
   };
 
   return (
-    <section id="contacto" className="w-full bg-slate-900 text-white py-12">
+    <section id="contacto" className="w-full bg-slate-900 text-white py-12 dark:bg-slate-50 dark:text-slate-900">
       <div className="mx-auto max-w-3xl px-4">
         <h2 className="text-2xl font-semibold mb-6">Contacto</h2>
 
@@ -41,7 +54,8 @@ const Contact: React.FC = () => {
               id="email"
               type="email"
               required
-              className="w-full rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+              className="w-full rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                         dark:border-slate-300 dark:bg-slate-100 dark:text-slate-900 dark:placeholder-slate-500"
               placeholder="tucorreo@ejemplo.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -57,7 +71,8 @@ const Contact: React.FC = () => {
               id="subject"
               type="text"
               required
-              className="w-full rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+              className="w-full rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                         dark:border-slate-300 dark:bg-slate-100 dark:text-slate-900 dark:placeholder-slate-500"
               placeholder="¿Sobre qué es tu mensaje?"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
@@ -73,7 +88,8 @@ const Contact: React.FC = () => {
               id="message"
               required
               rows={5}
-              className="w-full rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+              className="w-full rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                         dark:border-slate-300 dark:bg-slate-100 dark:text-slate-900 dark:placeholder-slate-500"
               placeholder="Escribe aquí tu mensaje..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -89,7 +105,7 @@ const Contact: React.FC = () => {
             {status === "sending" ? "Enviando..." : "Enviar mensaje"}
           </button>
 
-          {/* Mensaje de confirmación / error */}
+          {/* Mensajes de estado */}
           {status === "success" && (
             <p className="text-sm text-emerald-400 mt-2">
               Tu mensaje se envió correctamente. ¡Gracias por contactarme!
@@ -107,3 +123,4 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
+
