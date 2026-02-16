@@ -16,7 +16,7 @@ export default async function handler(req: Request): Promise<Response> {
     const resend = new Resend(process.env.RESEND_API_KEY!);
 
     const { data, error } = await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>", // tu dominio verificado en Resend
+      from: "Portfolio <https://mi-portfolio-web-gules.vercel.app>", // tu dominio verificado en Resend
       to: ["javieroliveradev0239@gmail.com"],      // ← TU EMAIL
       replyTo: email,
       subject: `Nuevo mensaje: ${subject}`,
