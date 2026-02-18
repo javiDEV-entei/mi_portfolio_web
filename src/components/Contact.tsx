@@ -8,36 +8,48 @@ const Contact: React.FC = () => {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!email || !subject || !message) return;
+  if (!email || !subject || !message) return;
 
-    try {
-      setStatus("sending");
+  try {
+    setStatus("sending");
 
-      // ← REEMPLAZA EL COMENTARIO POR ESTO:
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { 
-          "Content-Type": "application/json" 
-        },
-        body: JSON.stringify({ email, subject, message }),
-      });
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, subject, message }),
+    });
 
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.error || "Error al enviar");
-      }
+    const contentType = res.headers.get("Content-Type") || "";
+    let data: any = null;
 
-      setStatus("success");
-      setEmail("");
-      setSubject("");
-      setMessage("");
-    } catch (err) {
-      console.error(err);
-      setStatus("error");
+    if (contentType.includes("application/json")) {
+      data = await res.json();
+    } else {
+      // Evita el SyntaxError con respuestas que no son JSON (como 504 HTML)
+      const text = await res.text();
+      console.error("Respuesta no JSON:", text);
     }
-  };
+
+    if (!res.ok) {
+      const message =
+        data?.error || "Error al enviar el mensaje. Intenta más tarde.";
+      throw new Error(message);
+    }
+
+    setStatus("success");
+    setEmail("");
+    setSubject("");
+    setMessage("");
+  } catch (err) {
+    console.error(err);
+    setStatus("error");
+  }
+};
+
 
   return (
     <section id="contacto" className="w-full bg-slate-900 text-white py-12 dark:bg-slate-50 dark:text-slate-900">
