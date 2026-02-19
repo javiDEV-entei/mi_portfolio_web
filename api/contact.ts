@@ -2,26 +2,30 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY!);
 
-export default async function handler(req: Request): Promise<Response> {
+export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
-    return new Response("Method not allowed", { status: 405 });
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
-    const { email, subject, message } = await req.json();
-
-    if (!email || !subject || !message) {
-      return new Response(
-        JSON.stringify({ error: "Missing fields" }),
-        {
-          status: 400,
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+    // Parsear JSON manualmente para Node.js
+    let body;
+    try {
+      body = JSON.parse(req.body);
+    } catch {
+      return res.status(400).json({ error: "Invalid JSON" });
     }
 
+    const { email, subject, message } = body;
+
+    if (!email || !subject || !message) {
+      return res.status(400).json({ error: "Missing fields" });
+    }
+
+    console.log("Enviando email desde:", email); // debug
+
     const { data, error } = await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>", // o tu dominio verificado
+      from: "Portfolio <onboarding@resend.dev>",
       to: ["javieroliveradev0239@gmail.com"],
       replyTo: email,
       subject: `Nuevo mensaje: ${subject}`,
@@ -40,31 +44,14 @@ export default async function handler(req: Request): Promise<Response> {
     });
 
     if (error) {
-      console.error(error);
-      return new Response(
-        JSON.stringify({ error: "Failed to send email" }),
-        {
-          status: 500,
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      console.error("Resend error:", error);
+      return res.status(500).json({ error: "Failed to send email" });
     }
 
-    return new Response(
-      JSON.stringify({ success: true, data }),
-      {
-        status: 200,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    console.log("Email enviado exitosamente:", data); // debug
+    return res.status(200).json({ success: true });
   } catch (error) {
-    console.error(error);
-    return new Response(
-      JSON.stringify({ error: "Server error" }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    console.error("Error en handler:", error);
+    return res.status(500).json({ error: "Server error" });
   }
 }
