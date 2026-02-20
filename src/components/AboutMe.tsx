@@ -42,7 +42,7 @@ const AboutMe: React.FC = () => {
                 className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
               >
                 <img
-                  src="/public/aboutMe/LinkedIn-logo.svg"
+                  src="/aboutMe/LinkedIn-logo.svg"
                   alt="LinkedIn"
                   className="h-7 w-7"
                 />
@@ -54,7 +54,7 @@ const AboutMe: React.FC = () => {
                 className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
               >
                 <img
-                  src="/public/aboutMe/Email-logo.svg"
+                  src="/aboutMe/Email-logo.svg"
                   alt="email"
                   className="h-7 w-7"
                 />
@@ -68,7 +68,7 @@ const AboutMe: React.FC = () => {
                 className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
               >
                 <img
-                  src="/public/aboutMe/Github-Dark-logo.svg"
+                  src="/aboutMe/Github-Dark-logo.svg"
                   alt="GitHub"
                   className="h-7 w-7"
                 />
@@ -89,7 +89,7 @@ const AboutMe: React.FC = () => {
           {/* Contenedor de la foto */}
           <div className="relative h-40 w-40 rounded-full overflow-hidden ring-4 ring-sky-500/60 shadow-xl">
             <img
-              src="/public/aboutMe/foto de prueba portfolio.jpg" // reemplaza con tu ruta
+              src="/aboutMe/foto de prueba portfolio.jpg" // reemplaza con tu ruta
               alt="Foto de Javier Olivera"
               className="h-full w-full object-cover"
             />
