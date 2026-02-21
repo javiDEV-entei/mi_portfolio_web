@@ -9,7 +9,7 @@ const technologies: Tech[] = [
   { name: "HTML", image: "/skills/Html-logo.svg" },
   { name: "CSS", image: "/skills/Css-logo.svg" },
   { name: "Javascript", image: "/skills/Javascript-logo.svg" },
-  { name: "Typescript", image: "/skills/Typescript-logo.svg" },
+  { name: "Typescript", image: "/skills/TypeScript-logo.svg" },
   { name: "React", image: "/skills/React-logo.svg" },
   { name: "Tailwind", image: "/skills/TailwindCSS-logo.svg" },
   { name: "Nodejs", image: "/skills/Nodejs-logo.svg" },
