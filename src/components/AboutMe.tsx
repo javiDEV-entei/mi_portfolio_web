@@ -87,11 +87,11 @@ const AboutMe: React.FC = () => {
           </div>
 
           {/* Contenedor de la foto */}
-          <div className="relative h-40 w-40 rounded-full overflow-hidden ring-4 ring-sky-500/60 shadow-xl">
+          <div className="relative h-50 w-50 rounded-full overflow-hidden ring-4 ring-sky-500/60 shadow-xl">
             <img
-              src="/aboutMe/foto de prueba portfolio.jpg" // reemplaza con tu ruta
+              src="/aboutMe/foto-portfolio.jpg" // reemplaza con tu ruta
               alt="Foto de Javier Olivera"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-[50%_20%]"
             />
           </div>
         </div>
