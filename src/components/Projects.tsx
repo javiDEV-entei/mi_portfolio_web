@@ -20,10 +20,28 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
+    title: "FreshCoffe - App para control de ventas de una cafeteria",
+    description:
+      "Esta aplicacion permite gestionar las ventas de una cafeteria permitiendo tanto al cliente realizar pedidos como a los trabajadores visualizar las ordenes y poder marcarlas como pendientes o completadas para mayor organizacion",
+    image: "/projects/img-proyecto-1.png",
+    productionUrl:
+      "https://quiosco-nextjs-prisma-wheat.vercel.app/",
+    technologies: [
+      "TypeScript",
+      "NextJs",
+      "ReactJS",
+      "TailwindCSS",
+      "Prisma ORM",
+      "Zod",
+    ],
+    
+  },
+  {
+    id: 2,
     title: "UpTask - Administrador de proyectos",
     description:
       "Esta aplicación permite al usuario crear proyectos y también asignar tareas dentro de los mismos, dar distintos estados a estas tareas según vayan siendo completadas e incluso adjuntar notas a esas tareas. Además, implementa un panel de creación de cuentas e inicio de sesión.",
-    image: "/projects/img-proyecto-3.png",
+    image: "/projects/img-proyecto-2.png",
     productionUrl:
       "https://javi-dev-entei-uptask-admin-de-proy.vercel.app/",
     technologies: [
@@ -95,11 +113,11 @@ const projects: Project[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Planificador de gastos",
     description:
       "Aplicación web para el control de gastos. Permite al usuario realizar varias funciones, como establecer un presupuesto, listar y dividir gastos en varias categorías, y editar o eliminar gastos según lo necesite.",
-    image: "/projects/img-proyecto-2.png",
+    image: "/projects/img-proyecto-3.png",
     productionUrl: "https://jade-quokka-bb99ad.netlify.app/",
     technologies: [
       "TypeScript",
@@ -158,11 +176,11 @@ const projects: Project[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Buscador de recetas para cócteles y bebidas",
     description:
       "Aplicación que permite realizar búsquedas de cócteles y bebidas.Luego de hacer la búsqueda se muestran varios resultados, incluyendo una imagen del cóctel o bebida, sus ingredientes y la receta. La app también ofrece la posibilidad de agregar la bebida o el cóctel a una sección de favoritos.",
-    image: "/projects/img-proyecto-1.png",
+    image: "/projects/img-proyecto-4.png",
     productionUrl: "https://buscadodebebidastsreact.netlify.app/",
     technologies: [
       "TypeScript",
