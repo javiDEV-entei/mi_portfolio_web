@@ -1,0 +1,151 @@
+{
+  "section": {
+    "title": "These are some of the projects I have created"
+  },
+  "card": {
+    "technologiesTitle": "Technologies used in this project",
+    "liveDemo": "View live project",
+    "tutorial": "View app tutorial"
+  },
+  "items": {
+    "freshCoffee": {
+      "title": "FreshCoffee - App for managing sales in a coffee shop",
+      "description": "This application allows coffee shop sales to be managed, enabling customers to place orders while staff can view those orders and mark them as pending or completed for better organization.",
+      "tutorialModal": {
+        "title": "FreshCoffee - App for managing sales in a coffee shop",
+        "pendingMessage": "I will add the tutorial for this project soon."
+      }
+    },
+    "upTask": {
+      "title": "UpTask - Project Manager",
+      "description": "This application allows the user to create projects and assign tasks within them, set different statuses for those tasks as they are completed, and even attach notes to them. It also includes a sign-up and login panel.",
+      "tutorialModal": {
+        "title": "Tutorial: UpTask - Project Manager",
+        "steps": [
+          {
+            "id": 1,
+            "text" :"Sign in with the following credentials: email: correo@coreo.com and password: password."
+          },
+          {
+            "id": 2,
+            "text" :"Click the “New Project” button to access the next form."
+          },
+          {
+            "id": 3,
+            "text" : "Enter the project information in the indicated fields and then click “Create Project”."
+          },
+          {
+            "id": 4,
+            "text" :"To add tasks to the project, click “Add Task”, then fill in the indicated fields with the corresponding task information. After that, click “Save Task”."
+          },
+          {
+            "id": 5,
+            "text" :"After creating the task, you can use the drag-and-drop feature to change its status. Remember to drop the task in the area that says “DROP TASK HERE”."
+          },
+          {
+            "id": 6,
+            "text" :"By clicking the three-dot icon located at the top right of the task, you can access a menu that allows you to perform different actions."
+          },
+          {
+            "id": 7,
+            "text" :"When you click “View Task”, you will access a panel that shows task-related information such as the date it was added, the change history, its current status, and you will also be able to add a note to it."
+          },
+          {
+            "id": 8,
+            "text" :"In the menu located at the top right, you can access several options such as editing your profile information, viewing the projects you created, and signing out."
+          },
+          {
+            "id": 9,
+            "text" :"In the “My Profile” section, you can edit both the account name and its email address."
+          },
+          {
+            "id": 10,
+            "text" :"When you return to the projects dashboard, which you can do by clicking the UpTask logo in the top left corner, if you want to delete the project you can click the three dots located to the right of the project."
+          },
+          {
+            "id": 11,
+            "text" :"Before deleting the project, as a security measure, you will be asked to enter your account password. In this demo account, the password is “password”."
+          }
+          
+        
+        ]
+      }
+    },
+    "expensePlanner": {
+      "title": "Expense Planner",
+      "description": "Web application for expense tracking. It allows the user to perform several functions, such as setting a budget, listing and organizing expenses into different categories, and editing or deleting expenses as needed.",
+      "tutorialModal": {
+        "title": "Tutorial: Expense Planner",
+        "steps": [
+          {
+            "id": 1,
+            "text": "Set the desired budget and click on “Set Budget”."
+          },
+          {
+            "id": 2,
+            "text": "After this, you will have access to the main section of the app. To begin, you can add an expense by clicking the “+” button located at the bottom right."
+          },
+          {
+            "id": 3,
+            "text": "In the new expense form, you can define: a name for the expense, the amount spent, the category it belongs to, and the date it was made. For illustration purposes, in this tutorial we will create 3 expenses."
+          },
+          {
+            "id": 4,
+            "text": "After adding the expenses, you will be able to see several features: a chart that increases or decreases as you add or remove expenses, and a section showing your total budget, available amount, and amount spent."
+          },
+          {
+            "id": 5,
+            "text": "In the “Filter Expenses” section, you can filter them by category."
+          },
+          {
+            "id": 6,
+            "text": "By clicking on an expense and dragging it to the left, you can remove it from the list; if you do, the amount of the deleted expense will be added back to the available budget."
+          },
+          {
+            "id": 7,
+            "text":"By clicking on an expense and dragging it to the right, you can update the expense information."
+          },
+          {
+            "id": 8,
+            "text": "In the expense update form, you can edit all the data. Note: if you modify the expense amount, that change will also be reflected later in the chart."
+          },
+          {
+            "id": 9,
+            "text": "Finally, if you want to set a new budget to reset your expense list, you can click the “Reset App” button."
+          }
+         
+
+        ]
+      }
+    },
+
+    
+    "cocktailRecipes": {
+      "title": "Cocktail and Drink Recipe Finder",
+      "description": "Application that allows users to search for cocktails and drinks. After performing a search, several results are shown, including an image of the cocktail or drink, its ingredients, and the recipe. The app also offers the possibility of adding the drink or cocktail to a favorites section.",
+      "tutorialModal": {
+        "title": "Tutorial: Cocktail and Drink Recipe Finder",
+        "steps": [
+          {
+            "id": 1,
+            "text":"In the “Name or ingredients” field, you can search for a specific type of drink. As an example, the image shows a search for a vodka drink with lemon. In the “Category” field, you can select the one that best matches what you are looking for."
+          },
+          {
+            "id": 2,
+            "text":"When you click on “Search Drinks”, you will see several results appear with an image of the corresponding drink and its name."
+          },
+          {
+            "id": 3,
+            "text":"By clicking on “View Recipe”, you can see the drink ingredients and how to prepare it. In addition, you can add the recipe to the favorites section to view it later. Note: the information is currently displayed in English due to how the app works, but it will be translated soon."
+          },
+          {
+            "id": 4,
+            "text":"After adding it to favorites, you will see a notification in the upper right corner confirming that it was added successfully."
+          }
+         
+          
+        ]
+      }
+    }
+  }
+}

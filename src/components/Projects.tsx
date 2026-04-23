@@ -1,317 +1,158 @@
-import { useState } from "react";
-import TutorialModal from "./TutorialModal";
+import { useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import TutorialModal from './TutorialModal';
+import { projects } from '../data/projects';
+import { tutorialImages } from '../data/tutorialImages';
+import type { Project, TranslatedTutorialStep, TutorialStep } from '../types/index';
 
-type TutorialStep = {
-  id: number;
-  text: string;
-  image: string;
-};
+const Projects = () => {
+  const { t } = useTranslation('projects');
 
-type Project = {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  productionUrl: string;
-  technologies: string[];
-  tutorialSteps?: TutorialStep[];
-};
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "FreshCoffe - App para control de ventas de una cafeteria",
-    description:
-      "Esta aplicacion permite gestionar las ventas de una cafeteria permitiendo tanto al cliente realizar pedidos como a los trabajadores visualizar las ordenes y poder marcarlas como pendientes o completadas para mayor organizacion",
-    image: "/projects/img-proyecto-1.png",
-    productionUrl:
-      "https://quiosco-nextjs-prisma-wheat.vercel.app/",
-    technologies: [
-      "TypeScript",
-      "NextJs",
-      "ReactJS",
-      "TailwindCSS",
-      "Prisma ORM",
-      "Zod",
-    ],
-    
-  },
-  {
-    id: 2,
-    title: "UpTask - Administrador de proyectos",
-    description:
-      "Esta aplicación permite al usuario crear proyectos y también asignar tareas dentro de los mismos, dar distintos estados a estas tareas según vayan siendo completadas e incluso adjuntar notas a esas tareas. Además, implementa un panel de creación de cuentas e inicio de sesión.",
-    image: "/projects/img-proyecto-2.png",
-    productionUrl:
-      "https://javi-dev-entei-uptask-admin-de-proy.vercel.app/",
-    technologies: [
-      "TypeScript",
-      "Creacion de API REST",
-      "ReactJS",
-      "TailwindCSS",
-      "NodeJs",
-      "Express",
-      "MongoDB",
-      "Mongoose",
-    ],
-    tutorialSteps: [
-      {
-        id: 1,
-        text: "PASO 1: Iniciar sesión con los siguientes datos: correo: correo@coreo.com y contraseña: password.",
-        image: "/projects-tutorials/project1/ins1.png",
-      },
-      {
-        id: 2,
-        text: "PASO 2: Presionar el botón “Nuevo proyecto” para acceder al siguiente formulario.",
-        image: "/projects-tutorials/project1/ins2.png",
-      },
-      {
-        id: 3,
-        text: "PASO 3: Colocar los datos correspondientes al proyecto en los campos señalados y luego presionar en “Crear proyecto”.",
-        image: "/projects-tutorials/project1/ins3.png",
-      },
-      {
-        id: 4,
-        text: "PASO 4: Para poder agregar tareas al proyecto, hacer clic en “Agregar tarea” y luego colocar en los campos señalados los datos correspondientes a la tarea. Después, presionar en “Guardar tarea”.",
-        image: "/projects-tutorials/project1/ins4.png",
-      },
-      {
-        id: 5,
-        text: "PASO 5: Luego de crear la tarea, puedes usar la función de drag and drop (arrastrar y soltar) para cambiar el estado de la tarea. Recuerda soltar la tarea en la zona que dice “SOLTAR TAREA AQUÍ”.",
-        image: "/projects-tutorials/project1/ins5.png",
-      },
-      {
-        id: 6,
-        text: "PASO 6: Dando clic en el símbolo de tres puntos situado arriba a la derecha de la tarea, puedes acceder a un menú que permite realizar distintas acciones.",
-        image: "/projects-tutorials/project1/ins6.png",
-      },
-      {
-        id: 7,
-        text: "PASO 7: Al hacer clic en “Ver tarea” tendrás acceso a un panel que muestra datos referentes a la tarea, como la fecha en que se agregó, el historial de cambios, su estado actual y, además, podrás agregarle una nota.",
-        image: "/projects-tutorials/project1/ins7.png",
-      },
-      {
-        id: 8,
-        text: "PASO 8: En el menú situado arriba a la derecha puedes tener acceso a varias opciones, como editar los datos de tu perfil, ver los proyectos que creaste y cerrar sesión.",
-        image: "/projects-tutorials/project1/ins8.png",
-      },
-      {
-        id: 9,
-        text: "PASO 9: En la sección “Mi perfil” puedes editar tanto el nombre de la cuenta como también su email.",
-        image: "/projects-tutorials/project1/ins9.png",
-      },
-      {
-        id: 10,
-        text: "PASO 10: Al volver al dashboard de proyectos (puedes hacerlo haciendo clic en el logo de UpTask, arriba a la izquierda), en caso de que quieras eliminar el proyecto puedes presionar los tres puntos situados a la derecha del proyecto.",
-        image: "/projects-tutorials/project1/ins10.png",
-      },
-      {
-        id: 11,
-        text: "Antes de eliminar el proyecto, como medida de seguridad, se te pedirá que ingreses la contraseña de tu cuenta. En el caso de esta cuenta de prueba, la contraseña es la palabra “password”.",
-        image: "/projects-tutorials/project1/ins11.png",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Planificador de gastos",
-    description:
-      "Aplicación web para el control de gastos. Permite al usuario realizar varias funciones, como establecer un presupuesto, listar y dividir gastos en varias categorías, y editar o eliminar gastos según lo necesite.",
-    image: "/projects/img-proyecto-3.png",
-    productionUrl: "https://jade-quokka-bb99ad.netlify.app/",
-    technologies: [
-      "TypeScript",
-      "ReactJs",
-      "HeadLess UI",
-      "TailwindCSS",
-      "React-swipeable-list",
-    ],
-    tutorialSteps: [
-      {
-        id: 1,
-        text: "PASO 1: Establecer el presupuesto deseado y hacer clic en “Definir presupuesto”.",
-        image: "/projects-tutorials/project2/ins1.png",
-      },
-      {
-        id: 2,
-        text: "PASO 2: Luego de esto tendrás acceso a la sección principal de la app. Para empezar, puedes agregar un gasto haciendo clic en el botón “+” situado abajo a la derecha.",
-        image: "/projects-tutorials/project2/ins2.png",
-      },
-      {
-        id: 3,
-        image: "/projects-tutorials/project2/ins3.png",
-        text: "PASO 3: En el formulario de nuevo gasto puedes definir: un nombre para el gasto, la cantidad gastada, la categoría a la que pertenece y la fecha en que se realizó. Para fines ilustrativos, en este tutorial crearemos 3 gastos.",
-      },
-      {
-        id: 4,
-        text: "PASO 4: Después de agregar los gastos, podrás ver varias características: una gráfica que aumenta o disminuye a medida que agregues o elimines gastos, y una sección para ver tu presupuesto total, el disponible y el gastado.",
-        image: "/projects-tutorials/project2/ins4.png",
-      },
-      {
-        id: 5,
-        text: "PASO 5: En la sección de “Filtrar gastos” podrás filtrarlos por categoría.",
-        image: "/projects-tutorials/project2/ins5.png",
-      },
-      {
-        id: 6,
-        text: "PASO 6: Haciendo clic sobre el gasto y arrastrando hacia la izquierda puedes eliminarlo de la lista; si lo haces, la cantidad del gasto eliminado será sumada nuevamente al presupuesto disponible.",
-        image: "/projects-tutorials/project2/ins6.png",
-      },
-      {
-        id: 7,
-        text: "PASO 7: Haciendo clic sobre el gasto y arrastrando hacia la derecha puedes actualizar la información referente al gasto.",
-        image: "/projects-tutorials/project2/ins7.png",
-      },
-      {
-        id: 8,
-        text: "PASO 8: En el formulario de actualización del gasto puedes editar todos los datos. Observación: si modificas la cantidad del gasto, este cambio también se mostrará luego en la gráfica.",
-        image: "/projects-tutorials/project2/ins8.png",
-      },
-      {
-        id: 9,
-        text: "PASO 9: Por último, si deseas establecer otro presupuesto para reiniciar tu lista de gastos, puedes hacer clic en el botón “Resetear app”",
-        image: "/projects-tutorials/project2/ins9.png",
-      },
-      
-    ],
-  },
-  {
-    id: 4,
-    title: "Buscador de recetas para cócteles y bebidas",
-    description:
-      "Aplicación que permite realizar búsquedas de cócteles y bebidas.Luego de hacer la búsqueda se muestran varios resultados, incluyendo una imagen del cóctel o bebida, sus ingredientes y la receta. La app también ofrece la posibilidad de agregar la bebida o el cóctel a una sección de favoritos.",
-    image: "/projects/img-proyecto-4.png",
-    productionUrl: "https://buscadodebebidastsreact.netlify.app/",
-    technologies: [
-      "TypeScript",
-      "ReactJs",
-      "React-Router",
-      "TailwindCSS",
-      "Zustand",
-      "Consumo de APIs externas",
-    ],
-    tutorialSteps: [
-      {
-        id: 1,
-        text: "PASO 1: En el campo “Nombre o ingredientes” puedes buscar por un tipo de bebida específica. A modo de ejemplo, en la imagen se busca una bebida de vodka con limón. En el campo “Categoría” puedes seleccionar la que más se adecue a lo que estás buscando.",
-        image: "/projects-tutorials/project3/ins1.png",
-      },
-      {
-        id: 2,
-        text: "PASO 2: Al hacer clic en “Buscar bebidas”, verás que aparecen varios resultados con una imagen de la bebida correspondiente y su nombre.",
-        image: "/projects-tutorials/project3/ins2.png",
-      },
-      {
-        id: 3,
-        text: "PASO 3: Haciendo clic en “Ver receta” puedes ver los ingredientes de la bebida y el modo de prepararla. Además de eso, puedes agregar la receta a la sección de favoritos para verla después. Observación: actualmente la información se muestra en inglés por cuestiones del funcionamiento de la app, pero próximamente estará traducida.",
-        image: "/projects-tutorials/project3/ins3.png",
-      },
-      {
-        id: 4,
-        text: "PASO 4: Al agregarla a favoritos, podrás ver una notificación arriba a la derecha confirmando que se agregó correctamente.",
-        image: "/projects-tutorials/project3/ins4.png",
-      },
-      
-    ],
-  },
-];
-
-const Projects: React.FC = () => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProjectKey, setSelectedProjectKey] = useState<Project['translationKey'] | null>(null);
 
   const openTutorial = (project: Project) => {
-    if (!project.tutorialSteps || project.tutorialSteps.length === 0){
-       alert("Próximamente agregaré el tutorial para este proyecto")
-     return;
-    }
-    setSelectedProject(project);
+    setSelectedProjectKey(project.translationKey);
   };
 
   const closeTutorial = () => {
-    setSelectedProject(null);
+    setSelectedProjectKey(null);
   };
 
+  const tutorialTitle = useMemo(() => {
+    if (!selectedProjectKey) return '';
+
+    return t(`items.${selectedProjectKey}.tutorialModal.title`, {
+      defaultValue: '',
+    }) as string;
+  }, [selectedProjectKey, t]);
+
+  const pendingMessage = useMemo(() => {
+    if (!selectedProjectKey) return '';
+
+    return t(`items.${selectedProjectKey}.tutorialModal.pendingMessage`, {
+      defaultValue: '',
+    }) as string;
+  }, [selectedProjectKey, t]);
+
+  const translatedSteps = useMemo(() => {
+    if (!selectedProjectKey) return [];
+
+    return t(`items.${selectedProjectKey}.tutorialModal.steps`, {
+      returnObjects: true,
+      defaultValue: [],
+    }) as TranslatedTutorialStep[];
+  }, [selectedProjectKey, t]);
+
+  const tutorialSteps = useMemo<TutorialStep[]>(() => {
+    if (!selectedProjectKey) return [];
+
+    const images = tutorialImages[selectedProjectKey] ?? [];
+
+    return translatedSteps.map((step, index) => ({
+      id: step.id,
+      text: step.text,
+      image: images[index] ?? '',
+    }));
+  }, [selectedProjectKey, translatedSteps]);
+
+  useEffect(() => {
+    if (!selectedProjectKey) return;
+
+    if (tutorialSteps.length === 0 && pendingMessage) {
+      window.alert(pendingMessage);
+      closeTutorial();
+    }
+  }, [selectedProjectKey, tutorialSteps, pendingMessage]);
+
   return (
-    <section id="proyectos" className="w-full bg-slate-900 text-white py-12 dark:bg-slate-50 dark:text-slate-900">
-      <div className="mx-auto max-w-6xl px-4 space-y-8">
-        <h2 className=" text-center text-2xl font-semibold"> Estos son algunos de los proyectos que he creado </h2>
+    <>
+      <section
+        id="projects"
+        className="w-full bg-slate-900 py-12 text-white dark:bg-slate-50 dark:text-slate-900"
+      >
+        <div className="mx-auto max-w-6xl space-y-8 px-4">
+          <h2 className="text-center text-2xl font-semibold">
+            {t('section.title')}
+          </h2>
 
-        <div className="space-y-6">
-          {projects.map((project) => (
-            <article
-              key={project.id}
-              className="flex flex-col md:flex-row gap-4 rounded-xl bg-slate-800/60 p-4 shadow-lg 
-                         transform transition-transform duration-300 hover:scale-105 h-full dark:bg-white dark:shadow-md"
-            >
-              {/* Imagen izquierda */}
-              <div className="h-full w-full md:w-1/3">
-                <div className="h-full w-full overflow-hidden rounded-lg bg-slate-700">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Contenido derecha */}
-              <div className="w-full md:w-2/3 flex flex-col justify-between gap-3">
-                <div className="space-y-3">
-                  <h3 className="text-lg font-semibold">{project.title}</h3>
-                  <p className="text-sm text-slate-300 dark:text-slate-700">
-                    {project.description}
-                  </p>
-
-                  <p className="font-bold">
-                    Tecnologias empleadas en este proyecto
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-full bg-slate-700 px-3 py-1 text-xs font-medium text-slate-100 border border-blue-400"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+          <div className="space-y-6">
+            {projects.map((project) => (
+              <article
+                key={project.id}
+                className="flex h-full flex-col gap-4 rounded-xl bg-slate-800/60 p-4 shadow-lg transition-transform duration-300 hover:scale-105 dark:bg-white dark:shadow-md md:flex-row"
+              >
+                <div className="h-full w-full md:w-1/3">
+                  <div className="h-full w-full overflow-hidden rounded-lg bg-slate-700">
+                    <img
+                      src={project.image}
+                      alt={t(`items.${project.translationKey}.title`) as string}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                 </div>
 
-                <div className="mt-10 flex flex-wrap gap-3">
-                  <a
-                    href={project.productionUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-md bg-sky-500 px-4 py-2 text-sm font-medium text-white hover:bg-sky-600 transition-colors"
-                  >
-                    ver proyecto en producción
-                  </a>
+                <div className="flex w-full flex-col justify-between gap-3 md:w-2/3">
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-semibold">
+                      {t(`items.${project.translationKey}.title`) as string}
+                    </h3>
 
-                  <button
-                    type="button"
-                    onClick={() => openTutorial(project)}
-                    className="inline-flex items-center justify-center rounded-md border border-slate-500 px-4 py-2 text-sm font-medium text-slate-100  dark:text-slate-900  hover:bg-slate-700 transition-colors"
-                  >
-                    ver tutorial de la app
-                  </button>
+                    <p className="text-sm text-slate-300 dark:text-slate-700">
+                      {t(`items.${project.translationKey}.description`) as string}
+                    </p>
+
+                    <p className="font-bold">
+                      {t('card.technologiesTitle')}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-full border border-blue-400 bg-slate-700 px-3 py-1 text-xs font-medium text-slate-100"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-10 flex flex-wrap gap-3">
+                    <a
+                      href={project.productionUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-md bg-sky-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-sky-600"
+                    >
+                      {t('card.liveDemo')}
+                    </a>
+
+                    <button
+                      type="button"
+                      onClick={() => openTutorial(project)}
+                      className="inline-flex items-center justify-center rounded-md border border-slate-500 px-4 py-2 text-sm font-medium text-slate-100 transition-colors hover:bg-slate-700 dark:text-slate-900"
+                    >
+                      {t('card.tutorial')}
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Modal de tutorial */}
-      {selectedProject && selectedProject.tutorialSteps && (
+      {selectedProjectKey && tutorialSteps.length > 0 && (
         <TutorialModal
-          isOpen={!!selectedProject}
+          isOpen={true}
           onClose={closeTutorial}
-          projectTitle={selectedProject.title}
-          steps={selectedProject.tutorialSteps}
+          projectTitle={tutorialTitle}
+          steps={tutorialSteps}
         />
       )}
-    </section>
+    </>
   );
 };
 
 export default Projects;
+

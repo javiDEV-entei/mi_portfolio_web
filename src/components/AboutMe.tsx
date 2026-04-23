@@ -1,18 +1,20 @@
-// src/components/AboutMe.tsx
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const AboutMe: React.FC = () => {
   
+  const { t } = useTranslation('aboutMe');
+
   return (
     <section
       id="sobre-mi"
       className="w-full bg-slate-900 text-white py-12 dark:bg-slate-50 dark:text-slate-900"
     >
       <h1 className="mx-auto max-w-xs text-4xl md:text-5xl font-black uppercase text-white dark:text-slate-900 mb-2">
-      JAVIER OLIVERA
+      {t('name')}
     </h1>
     <p className="mx-auto max-w-xs text-lg md:text-xl font-thin text-slate-400 dark:text-slate-600 mb-20">
-      desarrollador FullStack
+      {t('role')}
     </p>
       <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* IZQUIERDA: descripción + redes */}
@@ -21,17 +23,14 @@ const AboutMe: React.FC = () => {
           <div className="space-y-3">
             <h2 className="text-2xl font-semibold">Una breve introducción sobre mí</h2>
             <p className="text-xl text-slate-300 dark:text-slate-700 leading-relaxed">
-              Hola, mi nombre es Javier Olivera.
-              Soy desarrollador web full stack con 2 años de experiencia en la creación de páginas y aplicaciones web.
-              Cuento con conocimiento y práctica en algunas de las tecnologías más usadas, como <span className=" font-bold">HTML, CSS, JavaScript, TypeScript, React</span>, entre otras.
-              Te invito a seguir viendo mi portfolio para conocer el stack completo de tecnologías que manejo y algunos de los proyectos que he creado.
-                          </p>
+              {t('description')}
+              </p>
           </div>
 
           {/* Redes sociales */}
           <div className="space-y-3">
             <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-900">
-              Contacta conmigo
+              {t('cta')}
             </h3>
             <div className="flex flex-wrap gap-4">
               {/* LinkedIn */}

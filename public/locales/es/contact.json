@@ -1,0 +1,16 @@
+{
+  "title": "Contacto",
+  "labels": {
+    "email": "Tu email",
+    "subject": "Asunto",
+    "message": "Mensaje"
+  },
+  "placeholders": {
+    "email": "tucorreo@ejemplo.com",
+    "subject": "¿Sobre qué es tu mensaje?",
+    "message": "Escribe aquí tu mensaje..."
+  },
+  "button": {
+    "submit": "Enviar mensaje"
+  }
+}

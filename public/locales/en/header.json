@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "about": "About me",
+    "projects": "Projects",
+    "technologies": "Technologies",
+    "contact": "Contact"
+  },
+  "themeToggle": {
+    "dark": "Dark",
+    "light": "Light"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "section": {
+    "title": "Estos son algunos de los proyectos que he creado"
+  },
+  "card": {
+    "technologiesTitle": "Tecnologías empleadas en este proyecto",
+    "liveDemo": "Ver proyecto en producción",
+    "tutorial": "Ver tutorial de la app"
+  },
+  "items": {
+    "freshCoffee": {
+      "title": "FreshCoffee - App para control de ventas de una cafetería",
+      "description": "Esta aplicación permite gestionar las ventas de una cafetería, permitiendo tanto al cliente realizar pedidos como a los trabajadores visualizar las órdenes y marcarlas como pendientes o completadas para una mejor organización.",
+      "tutorialModal": {
+        "title": "FreshCoffee - App para control de ventas de una cafetería",
+        "pendingMessage": "Próximamente agregaré el tutorial para este proyecto."
+      }
+    },
+    "upTask": {
+      "title": "UpTask - Administrador de proyectos",
+      "description": "Esta aplicación permite al usuario crear proyectos y también asignar tareas dentro de los mismos, dar distintos estados a estas tareas según vayan siendo completadas e incluso adjuntar notas a esas tareas. Además, implementa un panel de creación de cuentas e inicio de sesión.",
+      "tutorialModal": {
+        "title": "Tutorial: UpTask - Administrador de proyectos",
+        "steps": [
+          {
+            "id": 1,
+            "text": "Iniciar sesión con los siguientes datos: correo: correo@coreo.com y contraseña: password."
+          },
+          {
+            "id": 2,
+            "text": "Presionar el botón “Nuevo proyecto” para acceder al siguiente formulario."
+          },
+          {
+            "id": 3,
+            "text": "Colocar los datos correspondientes al proyecto en los campos señalados y luego presionar en “Crear proyecto”."
+          },
+          {
+            "id": 4,
+            "text": "Para poder agregar tareas al proyecto, hacer clic en “Agregar tarea” y luego colocar en los campos señalados los datos correspondientes a la tarea. Después, presionar en “Guardar tarea”."
+          },
+          {
+            "id": 5,
+            "text": "Luego de crear la tarea, puedes usar la función de drag and drop (arrastrar y soltar) para cambiar el estado de la tarea. Recuerda soltar la tarea en la zona que dice “SOLTAR TAREA AQUÍ”."
+          },
+          {
+            "id": 6,
+            "text": "Dando clic en el símbolo de tres puntos situado arriba a la derecha de la tarea, puedes acceder a un menú que permite realizar distintas acciones."
+          },
+          {
+            "id": 7,
+            "text": "Al hacer clic en “Ver tarea” tendrás acceso a un panel que muestra datos referentes a la tarea, como la fecha en que se agregó, el historial de cambios, su estado actual y, además, podrás agregarle una nota."
+          },
+          {
+            "id": 8,
+           " text": "En el menú situado arriba a la derecha puedes tener acceso a varias opciones, como editar los datos de tu perfil, ver los proyectos que creaste y cerrar sesión."
+          },
+          {
+            "id": 9,
+            "text": "En la sección “Mi perfil” puedes editar tanto el nombre de la cuenta como también su email."
+          },
+          {
+            "id": 10,
+            "text": "Al volver al dashboard de proyectos (puedes hacerlo haciendo clic en el logo de UpTask, arriba a la izquierda), en caso de que quieras eliminar el proyecto puedes presionar los tres puntos situados a la derecha del proyecto."
+          },
+          {
+           " id": 11,
+            "text": "Antes de eliminar el proyecto, como medida de seguridad, se te pedirá que ingreses la contraseña de tu cuenta. En el caso de esta cuenta de prueba, la contraseña es la palabra “password”."
+          }
+          
+          
+          
+          
+        ]
+      }
+    },
+    "expensePlanner": {
+      "title": "Planificador de gastos",
+      "description": "Aplicación web para el control de gastos. Permite al usuario realizar varias funciones, como establecer un presupuesto, listar y dividir gastos en varias categorías, y editar o eliminar gastos según lo necesite.",
+      "tutorialModal": {
+        "title": "Tutorial: Planificador de gastos",
+        "steps": [
+          {
+            "id": 1,
+            "text":"Establecer el presupuesto deseado y hacer clic en “Definir presupuesto”."
+          },
+          {
+            "id": 2,
+            "text":"Luego de esto tendrás acceso a la sección principal de la app. Para empezar, puedes agregar un gasto haciendo clic en el botón “+” situado abajo a la derecha."
+          },
+          {
+            "id": 3,
+            "text":"En el formulario de nuevo gasto puedes definir: un nombre para el gasto, la cantidad gastada, la categoría a la que pertenece y la fecha en que se realizó. Para fines ilustrativos, en este tutorial crearemos 3 gastos."
+          },
+          {
+            "id": 4,
+            "text":"Después de agregar los gastos, podrás ver varias características: una gráfica que aumenta o disminuye a medida que agregues o elimines gastos, y una sección para ver tu presupuesto total, el disponible y el gastado."
+          },
+          {
+            "id": 5,
+            "text":"En la sección de “Filtrar gastos” podrás filtrarlos por categoría."
+          },
+          {
+            "id": 6,
+            "text":"Haciendo clic sobre el gasto y arrastrando hacia la izquierda puedes eliminarlo de la lista; si lo haces, la cantidad del gasto eliminado será sumada nuevamente al presupuesto disponible."
+          },
+          {
+            "id": 7,
+            "text":"Haciendo clic sobre el gasto y arrastrando hacia la derecha puedes actualizar la información referente al gasto."
+          },
+          {
+            "id": 8,
+            "text":"En el formulario de actualización del gasto puedes editar todos los datos. Observación: si modificas la cantidad del gasto, este cambio también se mostrará luego en la gráfica."
+          },
+          {
+            "id": 9,
+            "text":"Por último, si deseas establecer otro presupuesto para reiniciar tu lista de gastos, puedes hacer clic en el botón “Resetear app”."
+          }
+          
+          
+          
+        ]
+      }
+    },
+
+
+    "cocktailRecipes": {
+      "title": "Buscador de recetas para cócteles y bebidas",
+      "description": "Aplicación que permite realizar búsquedas de cócteles y bebidas. Luego de hacer la búsqueda se muestran varios resultados, incluyendo una imagen del cóctel o bebida, sus ingredientes y la receta. La app también ofrece la posibilidad de agregar la bebida o el cóctel a una sección de favoritos.",
+      "tutorialModal": {
+        "title": "Tutorial: Buscador de recetas para cócteles y bebidas",
+        "steps": [
+          {
+            "id": 1,
+            "text": "En el campo “Nombre o ingredientes” puedes buscar por un tipo de bebida específica. A modo de ejemplo, en la imagen se busca una bebida de vodka con limón. En el campo “Categoría” puedes seleccionar la que más se adecue a lo que estás buscando."
+          },
+          {
+            "id": 2,
+            "text":"Al hacer clic en “Buscar bebidas”, verás que aparecen varios resultados con una imagen de la bebida correspondiente y su nombre." 
+          },
+          {
+            "id": 3,
+            "text": "Haciendo clic en “Ver receta” puedes ver los ingredientes de la bebida y el modo de prepararla. Además de eso, puedes agregar la receta a la sección de favoritos para verla después. Observación: actualmente la información se muestra en inglés por cuestiones del funcionamiento de la app, pero próximamente estará traducida."
+          },
+          {
+            "id": 4,
+            "text":"Al agregarla a favoritos, podrás ver una notificación arriba a la derecha confirmando que se agregó correctamente."
+          }
+          
+        ]
+      }
+    }
+  }
+}
