@@ -35,7 +35,7 @@ const AboutMe: React.FC = () => {
             <div className="flex flex-wrap gap-4">
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/in/javier-olivera-0b1066271/"
+                href="https://www.linkedin.com/in/javieroliveradev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 hover:bg-sky-500 transition-colors"
