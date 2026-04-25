@@ -21,7 +21,7 @@ const AboutMe: React.FC = () => {
         <div className="space-y-6">
           {/* Descripción */}
           <div className="space-y-3">
-            <h2 className="text-2xl font-semibold">Una breve introducción sobre mí</h2>
+            <h2 className="text-2xl font-semibold">{t('subtitle')}</h2>
             <p className="text-xl text-slate-300 dark:text-slate-700 leading-relaxed">
               {t('description')}
               </p>

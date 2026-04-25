@@ -12,5 +12,8 @@
   },
   "button": {
     "submit": "Enviar mensaje"
-  }
+  },
+  "sending": "Enviando...",
+  "success": "Tu mensaje se envió correctamente. ¡Gracias por contactarme!",
+  "error": "Ocurrió un error al enviar el mensaje. Intenta nuevamente en unos minutos."
 }

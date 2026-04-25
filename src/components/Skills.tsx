@@ -1,4 +1,4 @@
-
+import { useTranslation } from "react-i18next";
 
 type Tech = {
   name: string;
@@ -28,6 +28,8 @@ const technologies: Tech[] = [
 ];
 
 const Technologies: React.FC = () => {
+
+  const { t } = useTranslation("skills");
   return (
     <section
       id="tecnologias"
@@ -35,7 +37,7 @@ const Technologies: React.FC = () => {
     >
       <div className="mx-auto max-w-6xl px-4">
         <h2 className=" text-center text-2xl font-semibold mb-8">
-          Tecnologías con las que he trabajado
+          {t('title')}
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
