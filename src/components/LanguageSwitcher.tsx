@@ -17,7 +17,7 @@ const LanguageSwitcher: React.FC = () => {
         aria-label="Cambiar a español"
       >
         <img 
-        src='public/header/banderas/icono-spain-flag.png'
+        src='/header/banderas/icono-spain-flag.png'
          alt="Español" 
          className="h-6 w-8 object-cover rounded-sm" />
       </button>
@@ -32,7 +32,7 @@ const LanguageSwitcher: React.FC = () => {
         }`}
         aria-label="Switch to English"
       >
-        <img src='public/header/banderas/icono-usa-flag.png'
+        <img src='/header/banderas/icono-usa-flag.png'
          alt="English"
         className="h-6 w-8 object-cover rounded-sm" />
       </button>
